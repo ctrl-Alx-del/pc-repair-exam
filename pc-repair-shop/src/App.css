@@ -9,12 +9,15 @@
   height: 130px;
   width: 100%;
   display: grid;
-  grid-template-columns: 200px 200px 1fr 100px 100px;
+  grid-template-columns: 200px 200px 200px 1fr 200px 200px;
   align-items: center;
 }
 
 .basketImg {
   height: 3em;
+  background-color: white;
+  border: solid white;
+  border-radius: 7px;
 }
 
 .basketImg:hover {
@@ -44,6 +47,9 @@
 
 .loginImg {
   height: 3em;
+  background-color: white;
+  border: solid white;
+  border-radius: 100px;
 }
 
 .loginImg:hover {
@@ -78,7 +84,7 @@ a {
 }
 
 .searchBarContainer {
-  padding-left: 220px;
+  display: block;
 }
 
 .footer {
