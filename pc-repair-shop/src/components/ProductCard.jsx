@@ -3,7 +3,7 @@
 import { PortableText } from "@portabletext/react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./ui/carousel";
 import { useNavigate } from "react-router-dom";
-
+import { Link } from "react-router-dom";
 function PostCard({ product }) {
   // const [posts, setPosts] = useState([]);
 
@@ -21,7 +21,7 @@ function PostCard({ product }) {
       <div className="flex justify-between items-center mb-4">
         <h1 className="text-xl font-bold mb-4">Produkter</h1>
         {/* {products.length === 0 && <p>No posts found.</p>} */}
-        <a href="pages/ProductPage.jsx">Se alle produkter</a>
+        <Link to="/alle-produkter">Se alle produkter</Link>
       </div>
       <Carousel className={"w-200 mx-auto"}>
         <CarouselNext />

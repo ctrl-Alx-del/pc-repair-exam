@@ -7,6 +7,7 @@ import About from "./pages/About.jsx";
 import Contacts from "./pages/Contacts.jsx";
 import Home from "./pages/Home.jsx";
 import ProductPage from "./pages/ProductPage.jsx";
+import AllProducts from "./pages/AllProducts.jsx";
 import { ProductsProvider } from "./context/ProductProvider.jsx";
 
 function App() {
@@ -14,16 +15,16 @@ function App() {
     <>
       <Magebird />
       <Header />
-      <Footer />
-
       <ProductsProvider>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/kontakt" element={<Contacts />} />
           <Route path="/products/:slug" element={<ProductPage />} />
+          <Route path="/alle-produkter" element={<AllProducts />} />
         </Routes>
       </ProductsProvider>
+      <Footer />
     </>
   );
 }

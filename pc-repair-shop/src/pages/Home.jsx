@@ -7,7 +7,7 @@ function Home() {
   if (!products.length) return <p>Loading products...</p>;
 
   return (
-    <div>
+    <div className="Home">
       {/* {products.map((product) => ( */}
       <PostCard key={products._id} product={products} />
       {/* ))} */}

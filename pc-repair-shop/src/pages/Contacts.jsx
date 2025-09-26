@@ -1,6 +1,6 @@
 function Contacts() {
   return (
-    <div>
+    <div className="Contacts">
       <h1>Contacts</h1>
     </div>
   );

@@ -14,7 +14,7 @@ function ProductPage() {
   }
 
   return (
-    <div>
+    <div className="productPage">
       <h1>{product.title}</h1>
       <p>{product.lager}</p>
       <p>Price: ${product.price}</p>
