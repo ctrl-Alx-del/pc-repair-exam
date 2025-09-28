@@ -3,8 +3,11 @@ import "./SearchBar.jsx";
 import SearchBar from "./SearchBar.jsx";
 import { Popover, PopoverContent, PopoverTrigger } from "@radix-ui/react-popover";
 import { Link } from "react-router-dom";
+import { useCart } from "../context/UseCartCombined.jsx";
 
 function Header() {
+  const { cart } = useCart();
+
   return (
     <>
       <div className="Header">
@@ -22,9 +25,20 @@ function Header() {
 
         <SearchBar />
         <div>
-          <a href="">
-            <img className="basketImg" src="./src/assets/purchase.png" alt="Basket icons created by Afian Rochmah Afif - Flaticon" /> <p className="basketText">Kurv</p>
-          </a>
+          <Popover>
+            <PopoverTrigger>
+              <img className="basketImg" src="./src/assets/purchase.png" alt="Basket icons created by Afian Rochmah Afif - Flaticon" /> <p className="basketText">Kurv</p>
+            </PopoverTrigger>
+            <PopoverContent className="w-80">
+              <div className="kurvContainer">
+                <h2>Kurv</h2>
+                <div className="kurvLength">{cart.length}</div>
+                <div className="kurvTitle flex">
+                  <div className="flex-row">{cart.map((product) => product.title)}</div>
+                </div>
+              </div>
+            </PopoverContent>
+          </Popover>
         </div>
         <div>
           <Popover>
