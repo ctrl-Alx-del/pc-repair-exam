@@ -10,7 +10,7 @@ function Header() {
 
   return (
     <>
-      <div className="Header">
+      <div className="Header z-2 relative">
         <div className="logo">
           <Link to={"/"}>
             <img src={reactLogo} alt="logo" /> PC Repair Shop
@@ -24,17 +24,22 @@ function Header() {
         </div>
 
         <SearchBar />
-        <div>
+        <div className="">
           <Popover>
             <PopoverTrigger>
               <img className="basketImg" src="./src/assets/purchase.png" alt="Basket icons created by Afian Rochmah Afif - Flaticon" /> <p className="basketText">Kurv</p>
             </PopoverTrigger>
             <PopoverContent className="w-80">
               <div className="kurvContainer">
-                <h2>Kurv</h2>
-                <div className="kurvLength">{cart.length}</div>
-                <div className="kurvTitle flex">
-                  <div className="flex-row">{cart.map((product) => product.title)}</div>
+                <h2 className="text-center">Kurv</h2>
+                <div className="kurvLength">Kurv Størrelse: {cart.length}</div>
+                <div className="kurvTitle flex flex-col">
+                  {cart.map((product) => (
+                    <div>
+                      <div className="kurvItem">{product.title}</div>
+                      <hr></hr>
+                    </div>
+                  ))}
                 </div>
               </div>
             </PopoverContent>
