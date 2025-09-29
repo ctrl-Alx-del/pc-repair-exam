@@ -10,24 +10,28 @@ import ProductPage from "./pages/ProductPage.jsx";
 import AllProducts from "./pages/AllProducts.jsx";
 import { ProductsProvider } from "./context/ProductProvider.jsx";
 import { CartProvider } from "./context/CartContext.jsx";
+import { StarProvider } from "./context/StarContext.jsx";
+import { Star } from "lucide-react";
 
 function App() {
   return (
     <>
-      <CartProvider>
-        <Magebird />
-        <Header />
-        <ProductsProvider>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/kontakt" element={<Contacts />} />
-            <Route path="/products/:slug" element={<ProductPage />} />
-            <Route path="/alle-produkter" element={<AllProducts />} />
-          </Routes>
-        </ProductsProvider>
-        <Footer />
-      </CartProvider>
+      <StarProvider>
+        <CartProvider>
+          <Magebird />
+          <Header />
+          <ProductsProvider>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/kontakt" element={<Contacts />} />
+              <Route path="/products/:slug" element={<ProductPage />} />
+              <Route path="/alle-produkter" element={<AllProducts />} />
+            </Routes>
+          </ProductsProvider>
+          <Footer />
+        </CartProvider>
+      </StarProvider>
     </>
   );
 }

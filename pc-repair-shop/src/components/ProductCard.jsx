@@ -1,10 +1,11 @@
-import { useState } from "react";
+// import { useState } from "react";
 // import { client } from "../lib/sanity";
 import { PortableText } from "@portabletext/react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./ui/carousel";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useCart } from "../context/UseCartCombined.jsx";
+import { useStars } from "../context/UseStarContext";
 
 function PostCard({ product }) {
   // const [posts, setPosts] = useState([]);
@@ -16,12 +17,14 @@ function PostCard({ product }) {
   const { addToCart } = useCart();
   const { removeFromCart } = useCart();
 
+  const { clicked, setClicked } = useStars(productsClicked);
+
   const navigate = useNavigate();
   const handleViewProduct = (slug) => {
     navigate(`/products/${slug}`);
   };
 
-  const [clicked, setClicked] = useState(productsClicked);
+  // const [clicked, setClicked] = useState(productsClicked);
 
   function productsClicked() {
     let length = [];
@@ -42,9 +45,7 @@ function PostCard({ product }) {
     if (newClicked[elementIndex]) {
       addToCart(selectedProduct);
     } else {
-      console.log("Removing:", selectedProduct._id, "Cart before:", selectedProduct);
       removeFromCart(selectedProduct._id);
-      console.log("Cart after:", selectedProduct);
     }
   }
 

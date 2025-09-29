@@ -35,7 +35,7 @@ function Header() {
                 <div className="kurvLength">Kurv Størrelse: {cart.length}</div>
                 <div className="kurvTitle flex flex-col">
                   {cart.map((product) => (
-                    <div>
+                    <div key={product._id}>
                       <div className="kurvItem">{product.title}</div>
                       <hr></hr>
                     </div>
