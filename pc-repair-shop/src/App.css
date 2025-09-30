@@ -18,6 +18,36 @@
   z-index: 1;
 }
 
+.serviceCardContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 250px);
+  grid-template-rows: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 10px;
+}
+
+.serviceCard {
+  background-color: white;
+  border: solid black 1px;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.searchContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  margin-top: 60px;
+}
+
+.results {
+  background-color: white;
+  border: solid black 1px;
+  border-radius: 5px;
+  padding: 10px;
+  width: 200px;
+  display: none;
+}
+
 .kurvContainer {
   background-color: white;
   border: solid black 1px;

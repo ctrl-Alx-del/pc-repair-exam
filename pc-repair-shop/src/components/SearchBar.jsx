@@ -7,7 +7,7 @@ function SearchBar() {
   const products = useContext(ProductsContext);
 
   const [searchedProducts, setSearchedProducts] = useState(products);
-  const [isEmpty, setIsEmpty] = useState(false);
+  const [isEmpty, setIsEmpty] = useState(true);
 
   const [searchInput, setSearchInput] = useState("");
 
@@ -19,8 +19,10 @@ function SearchBar() {
 
     if (value === "") {
       setIsEmpty(true);
+      document.querySelector(".results").style.display = "none";
     } else {
       setIsEmpty(false);
+      document.querySelector(".results").style.display = "block";
     }
   }
 
@@ -31,7 +33,7 @@ function SearchBar() {
 
   return (
     <>
-      <div>
+      <div className="searchContainer">
         <div className="searchBarContainer">
           <input
             value={searchInput}
@@ -45,7 +47,7 @@ function SearchBar() {
           {searchedProducts.map((product) => (
             <button className="flex flex-col" key={product._id} onClick={() => handleViewProduct(product.slug)}>
               {" "}
-              <div>{isEmpty ? "" : product.title}</div>
+              <div>{isEmpty ? "" : product.title} - Se mere</div>
             </button>
           ))}
         </div>

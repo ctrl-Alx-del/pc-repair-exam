@@ -53,9 +53,23 @@ function AllProducts() {
     }
   }
 
+  function sortingDown() {
+    const sortProducts = [...products].sort((a, b) => a.price - b.price);
+    setFilteredProducts(sortProducts);
+  }
+
+  function sortingUp() {
+    const sortProducts = [...products].sort((a, b) => b.price - a.price);
+    setFilteredProducts(sortProducts);
+  }
+
   return (
     <div className="p-8 w-350 mx-auto flex flex-row gap-4">
       <div className="inputFields flex flex-col">
+        <div className="flex justify-around mb-4">
+          <button onClick={sortingUp}>Up</button>
+          <button onClick={sortingDown}>Down</button>
+        </div>
         <input className="MaxPrice" type="number" placeholder="Øvre Pris" onChange={filterPrice}></input>
         <input className="MinPrice" type="number" placeholder={0} onChange={filterPrice}></input>
       </div>
