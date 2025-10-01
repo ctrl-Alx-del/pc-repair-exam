@@ -6,6 +6,8 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useCart } from "../context/UseCartCombined.jsx";
 import { useStars } from "../context/UseStarContext";
+import { useMediaQuery } from "usehooks-ts";
+import * as React from "react";
 
 function PostCard({ product }) {
   // const [posts, setPosts] = useState([]);
@@ -13,6 +15,8 @@ function PostCard({ product }) {
   // useEffect(() => {
   //   client.fetch(`*[_type == "post"]{_id, title, body, price, lager}`).then(setPosts);
   // }, []);
+
+  const isMobile = useMediaQuery("(max-width: 412px)");
 
   const { addToCart } = useCart();
   const { removeFromCart } = useCart();
@@ -50,17 +54,17 @@ function PostCard({ product }) {
   }
 
   return (
-    <div className="p-8 w-200 mx-auto">
+    <div className={isMobile ? "w-88 mx-auto p-4" : "p-8 w-200 mx-auto"}>
       <div className="flex justify-between items-center mb-4">
         <h1 className="text-xl font-bold mb-4">Produkter</h1>
         {/* {products.length === 0 && <p>No posts found.</p>} */}
         <Link to="/alle-produkter">Se alle produkter</Link>
       </div>
-      <Carousel className={"w-200 mx-auto"}>
+      <Carousel className={isMobile ? "w-full" : "w-200 mx-auto"} orientation={isMobile ? "vertical" : "horizontal"}>
         <CarouselNext />
         <CarouselContent>
           {product.map((element, index) => (
-            <CarouselItem key={element._id} className="basis-1/5">
+            <CarouselItem key={element._id} className={isMobile ? "basis-1/2" : "basis-1/5"}>
               {/* <h2 className="text-lg font-semibold">{post.title}</h2>
               <PortableText value={post.body} />
               <p className="mt-2">Lager: {post.lager}</p>

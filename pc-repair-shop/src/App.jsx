@@ -12,6 +12,7 @@ import { ProductsProvider } from "./context/ProductProvider.jsx";
 import { CartProvider } from "./context/CartContext.jsx";
 import { StarProvider } from "./context/StarContext.jsx";
 import { Star } from "lucide-react";
+import Checkout from "./pages/Checkout.jsx";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
               <Route path="/kontakt" element={<Contacts />} />
               <Route path="/products/:slug" element={<ProductPage />} />
               <Route path="/alle-produkter" element={<AllProducts />} />
+              <Route path="/checkout" element={<Checkout />} />
             </Routes>
           </ProductsProvider>
           <Footer />

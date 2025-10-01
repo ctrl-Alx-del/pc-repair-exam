@@ -8,7 +8,7 @@ function Banner() {
   return (
     <div className="flex items-center justify-center">
       <Carousel orientation="horizontal" plugins={[plugin.current]} opts={{ loop: true, align: "center" }}>
-        <CarouselContent className={"w-200 h-40"}>
+        <CarouselContent className={"bannerContent w-200 h-40"}>
           <CarouselItem className={"flex items-center justify-center"}>
             <h2 className="text-lg">Kampagne</h2>
           </CarouselItem>

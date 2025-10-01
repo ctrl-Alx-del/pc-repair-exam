@@ -37,7 +37,7 @@ function SearchBar() {
         <div className="searchBarContainer">
           <input
             value={searchInput}
-            className="rounded-full w-40 h-10 searchBar focus:outline-2 focus:outline-offset-2 focus:outline-violet-400 focus:w-60"
+            className="rounded-full w-40 h-10 searchBar focus:outline-2 focus:outline-offset-2 focus:outline-violet-400"
             type="text"
             placeholder="Søg"
             onChange={handleSearch}

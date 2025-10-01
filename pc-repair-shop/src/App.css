@@ -9,13 +9,25 @@
   min-height: 100vh;
 }
 
-.allProducts,
+.allProductsContainer,
 .Home,
 .About,
 .Contacts,
-.productPage {
+.productPage,
+.CheckoutContainer {
   flex: 1;
   z-index: 1;
+}
+
+#fornavn,
+#efternavn,
+#city,
+#zip,
+#email,
+#address {
+  border: solid black 1px;
+  border-radius: 5px;
+  padding: 5px;
 }
 
 .serviceCardContainer {
@@ -23,6 +35,58 @@
   grid-template-columns: repeat(3, 250px);
   grid-template-rows: repeat(auto-fill, minmax(300px, 1fr));
   gap: 10px;
+}
+
+@media (max-width: 412px) {
+  .serviceCardContainer {
+    display: grid;
+    grid-template-columns: repeat(1, 250px);
+    grid-template-rows: repeat(3, minmax(300px, 1fr));
+    gap: 10px;
+    width: 250px;
+  }
+
+  .bannerContent {
+    width: 250px;
+  }
+
+  #root .Header {
+    grid-template-columns: 70px 1fr 70px 70px;
+  }
+
+  .searchContainer .results {
+    width: 185px;
+  }
+
+  .allProductsContainer {
+    flex-direction: column;
+  }
+
+  .inputFields,
+  .sortingButtons {
+    flex-direction: row;
+  }
+
+  .sortingButtons {
+    margin-right: 60px;
+  }
+
+  .allProductsContainer .allProducts {
+    grid-template-rows: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: 1fr;
+  }
+
+  .productCardContainer {
+    width: 200px;
+  }
+
+  .allProductsContainer .inputContainer .MinPrice {
+    margin-top: 20px;
+  }
+
+  .sortingUpButton {
+    margin-right: 20px;
+  }
 }
 
 .serviceCard {
