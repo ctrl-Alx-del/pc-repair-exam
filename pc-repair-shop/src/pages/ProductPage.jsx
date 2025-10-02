@@ -14,10 +14,15 @@ function ProductPage() {
   }
 
   return (
-    <div className="productPage">
-      <h1>{product.title}</h1>
-      <p>{product.lager}</p>
-      <p>Price: ${product.price}</p>
+    <div className="productPage mx-auto w-200 flex flex-row">
+      <img className="imageSize" src={product.imageUrl} alt={product.title} />
+      <div className="p-8 flex justify-end">
+        <div className="flex flex-col">
+          <h1>{product.title}</h1>
+          <p>Lager haves: {product.lager}</p>
+          <p>Pris: {product.price} kr.</p>
+        </div>
+      </div>
     </div>
   );
 }

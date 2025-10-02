@@ -87,6 +87,11 @@
   .sortingUpButton {
     margin-right: 20px;
   }
+
+  .imageSize {
+    width: 30%;
+    height: 30%;
+  }
 }
 
 .serviceCard {
@@ -94,6 +99,7 @@
   border: solid black 1px;
   border-radius: 10px;
   padding: 10px;
+  box-shadow: 1px 1px 5px #888888;
 }
 
 .searchContainer {

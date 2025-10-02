@@ -98,6 +98,7 @@ function AllProducts() {
                   className="w-8"
                 ></img>
               </div>
+              <img className="imageSize" src={element.imageUrl} alt={element.title} />
               <p>{element.title}</p>
               <p>Lager: {element.lager}</p>
               <p>Pris: {element.price} kr.</p>

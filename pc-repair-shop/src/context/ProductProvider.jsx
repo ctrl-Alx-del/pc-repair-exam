@@ -16,7 +16,8 @@ export function ProductsProvider({ children }) {
           body,
           lager,
           "slug": slug.current,
-          price
+          price,
+          "imageUrl": image.asset->url
         }`);
 
         setProducts(data);

@@ -78,6 +78,7 @@ function PostCard({ product }) {
                   className="w-8"
                 ></img>
               </div>
+              <img src={element.imageUrl} alt={element.title} />
               <p>{element.title}</p>
               <p>{element.lager}</p>
               <p>{element.price}</p>
