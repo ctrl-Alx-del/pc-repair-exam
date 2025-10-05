@@ -8,12 +8,12 @@ function Banner() {
   return (
     <div className="flex items-center justify-center">
       <Carousel orientation="horizontal" plugins={[plugin.current]} opts={{ loop: true, align: "center" }}>
-        <CarouselContent className={"bannerContent w-200 h-40"}>
-          <CarouselItem className={"flex items-center justify-center"}>
-            <h2 className="text-lg">Kampagne</h2>
+        <CarouselContent className={"bannerContent w-200 h-30"}>
+          <CarouselItem className={"flex items-center justify-center bg-lime-300"}>
+            <h2 className="text-5xl">Kampagne</h2>
           </CarouselItem>
-          <CarouselItem className={"flex items-center justify-center"}>
-            <h2 className="text-lg">Tilbud</h2>
+          <CarouselItem className={"flex items-center justify-center bg-yellow-300"}>
+            <h2 className="text-5xl">Tilbud</h2>
           </CarouselItem>
         </CarouselContent>
       </Carousel>

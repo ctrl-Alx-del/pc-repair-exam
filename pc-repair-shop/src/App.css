@@ -37,6 +37,62 @@
   gap: 10px;
 }
 
+.logoTitle {
+  font-family: "Alan Sans", sans-serif;
+  font-weight: 700;
+  font-style: bold;
+}
+
+p {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+}
+
+.pris3 {
+  margin-bottom: 30px;
+}
+
+.pris2 {
+  margin-top: 20px;
+  margin-bottom: 43px;
+}
+
+.serviceButton {
+  cursor: pointer;
+  border: solid 1px black;
+  border-radius: 10px;
+}
+
+.productButton {
+  cursor: pointer;
+  border: solid 1px black;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.serviceButton:hover,
+.productButton:hover {
+  background-color: #bdf9a1;
+}
+
+.LogoLink,
+.kontaktLink,
+.aboutLink {
+  text-decoration: none;
+}
+
+.kontaktLink,
+.aboutLink {
+  font-size: 1.5em;
+  font-family: "Alan Sans", sans-serif;
+}
+
+.upArrow,
+.downArrow {
+  width: 50px;
+  height: 50px;
+}
+
 @media (max-width: 412px) {
   .serviceCardContainer {
     display: grid;
@@ -44,6 +100,11 @@
     grid-template-rows: repeat(3, minmax(300px, 1fr));
     gap: 10px;
     width: 250px;
+  }
+
+  .menuImg {
+    width: 40px;
+    height: 40px;
   }
 
   .bannerContent {
@@ -60,6 +121,10 @@
 
   .allProductsContainer {
     flex-direction: column;
+  }
+
+  .Header .searchContainer {
+    margin-top: 20px;
   }
 
   .inputFields,
@@ -129,6 +194,7 @@
   display: grid;
   grid-template-columns: repeat(4, 200px);
   grid-template-rows: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
 }
 
 .Header {
@@ -144,8 +210,8 @@
 .basketImg {
   height: 3em;
   background-color: white;
-  border: solid white;
-  border-radius: 7px;
+  border: solid #2747c4;
+  border-radius: 25px;
 }
 
 .basketImg:hover {
@@ -159,7 +225,7 @@
 .basketText {
   color: white;
   padding-left: 10px;
-  width: 50px;
+  width: 12px;
 }
 
 .about {
@@ -171,6 +237,7 @@
   padding-left: 50px;
   display: flex;
   height: 3em;
+  margin-bottom: 15px;
 }
 
 .loginImg {
@@ -209,6 +276,7 @@ a {
 
 .searchBar {
   background-color: white;
+  padding-left: 15px;
 }
 
 .searchBarContainer {

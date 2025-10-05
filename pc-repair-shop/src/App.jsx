@@ -2,7 +2,7 @@ import "./App.css";
 import Header from "./components/Header.jsx";
 import Magebird from "./components/magebird.jsx";
 import Footer from "./components/Footer.jsx";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import About from "./pages/About.jsx";
 import Contacts from "./pages/Contacts.jsx";
 import Home from "./pages/Home.jsx";
@@ -22,8 +22,8 @@ function App() {
           <ProductsProvider>
             <Magebird />
             <Header />
-            <Routes>
-              <Route path="/" element={<Home />} />
+            <Routes basename="/alfix">
+              <Route path="/alfix" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/kontakt" element={<Contacts />} />
               <Route path="/products/:slug" element={<ProductPage />} />
